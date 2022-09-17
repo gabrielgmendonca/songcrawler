@@ -6,6 +6,14 @@ class QuotesSpider(scrapy.Spider):
     start_urls = [
         'https://www.letras.mus.br/chico-buarque/',
         'https://www.letras.mus.br/milton-nascimento/',
+        'https://www.letras.mus.br/djavan/',
+        'https://www.letras.mus.br/caetano-veloso/',
+        'https://www.letras.mus.br/anavitoria/',
+        'https://www.letras.mus.br/marisa-monte/',
+        'https://www.letras.mus.br/nando-reis/',
+        'https://www.letras.mus.br/ze-ramalho/',
+        'https://www.letras.mus.br/gilberto-gil/',
+        'https://www.letras.mus.br/maria-bethania/',
     ]
 
     def parse(self, response):
