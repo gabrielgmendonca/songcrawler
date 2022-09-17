@@ -27,6 +27,7 @@ class QuotesSpider(scrapy.Spider):
             response
             .css('.letra-info_comp::text')
             .get()
+            .split(':')[1]
             .strip()
         )
         song_lyrics = '\n'.join(
