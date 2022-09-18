@@ -4,11 +4,11 @@ import scrapy
 class QuotesSpider(scrapy.Spider):
     name = 'songs'
     start_urls = [
-        'https://www.letras.mus.br/mais-acessadas/mpb/',
+        'https://www.letras.mus.br/estilos/mpb/todosartistas.html',
     ]
 
     def parse(self, response):
-        artist_links = response.css('.top-list_art a')
+        artist_links = response.css('ul.cnt-list li a')
         yield from response.follow_all(artist_links, self.parse_artist)
 
     def parse_artist(self, response):
@@ -36,4 +36,5 @@ class QuotesSpider(scrapy.Spider):
             'song_artist': song_artist,
             'song_writer': song_writer,
             'song_lyrics': song_lyrics,
+            'song_genre': 'mpb',
         }
